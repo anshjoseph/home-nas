@@ -1,0 +1,20 @@
+.h1_search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.card_grid{
+    margin-left: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-rows: repeat(3,5fr);
+    grid-gap: 15px;
+}
+.cd2{
+    transition: .4s;
+}
+.cd2:hover{
+    background-color:#cdc9c9c7;
+    border-color: rgba(167, 160, 160, 0.479)
+}

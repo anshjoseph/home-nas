@@ -1,0 +1,17 @@
+.up1_fs1{
+    display: flex;
+    flex-direction: column;
+}
+.up_main_d{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.progress-bar_cancal-btn{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.not_vis{
+    display: none;
+}

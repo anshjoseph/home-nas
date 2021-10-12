@@ -1,0 +1,1 @@
+.\python.exe .\HOME_NAS\manage.py runserver

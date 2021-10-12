@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock title %}</title>
+    {% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+    {% block link %}
+    {% endblock link %}
+    <link rel="stylesheet" type="text/css" href="{% static './global/css/bootstrap.min.css' %}">
+    {% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+    {% comment %} ---------------------------java script----------------------------- {% endcomment %}
+    <script src="{% static './global/js/bootstrap.min.js' %}"></script>
+    {% comment %} ---------------------------java script----------------------------- {% endcomment %}
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">Home nas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-3">
+                    {% comment %}
+                    LINK1
+                    {% endcomment %}
+
+                    {% if pg_no == 1 %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% endif %}
+
+                    {% comment %}
+                    LINK2
+                    {% endcomment %}
+                    {% if pg_no == 2 %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'appstore' %}">appStore</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'appstore' %}">appStore</a>
+                    </li>
+                    {% endif %}
+
+                    {% comment %}
+                    LINK3
+                    {% endcomment %}
+                    {% if pg_no == 3 %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">SignUp</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'signup' %}">SignUp</a>
+                    </li>
+                    {% endif %}
+
+
+                    {% comment %}
+                    LINK4
+                    {% endcomment %}
+
+                    {% if user.is_authenticated %}
+
+
+                    {% if pg_no == 4 %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% endif %}
+
+
+
+                    {% else %}
+
+
+                    {% if pg_no == 4 %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+
+
+
+                    {% endif %}
+
+
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    {% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+    {% block webcontent %}{% endblock webcontent %}
+    {% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+    {% comment %} ---------------------------java script----------------------------- {% endcomment %}
+    {% block script %}{% endblock script %}
+    {% comment %} ---------------------------java script----------------------------- {% endcomment %}
+</body>
+
+</html>

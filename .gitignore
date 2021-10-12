@@ -1,0 +1,11 @@
+.vscode/settings.json
+HOME_NAS/.vscode/settings.json
+
+HOME_NAS/HOME_NAS/__pycache__/
+HOME_NAS/insterface/__pycache__/
+HOME_NAS/user/__pycache__/
+HOME_NAS/user_crap/__pycache__/
+
+HOME_NAS/insterface/migrations/
+HOME_NAS/user/migrations/
+HOME_NAS/user_crap/migrations/

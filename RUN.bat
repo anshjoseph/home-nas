@@ -1,0 +1,2 @@
+start D:\potable_python\HOME_NASv0.1\nginx-1.20.1\nginx.exe
+D:\potable_python\HOME_NASv0.1\python-3.9.0rc1\python.exe D:\potable_python\HOME_NASv0.1\HOME_NAS\runserver.py

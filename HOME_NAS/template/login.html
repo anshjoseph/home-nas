@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+{% block title %}Login{% endblock title %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+
+
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static './custom/login.css' %}">
+{% endblock link %}
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+
+
+
+{% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+{% block webcontent %}
+<div class="container ffdiv1log">
+	<h2>Login</h2>
+	<form method="POST" action="">
+	{% csrf_token %}
+		<div class="mt-3">
+			<label>Username</label>
+			<input class="form-control" type="name" name="username">
+		</div>
+
+		<div class="mt-3">
+			<label>Password</label>
+			<input class="form-control" type="password" name="password">
+		</div>
+
+		<center>
+			<input type="submit" class="btn btn-success mt-5">
+		</center>
+	</form>
+</div>
+{% endblock webcontent %}
+{% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
+{% block script %}{% endblock script %}
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}

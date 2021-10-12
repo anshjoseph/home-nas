@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+{% block title %}
+upload
+{% endblock title %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+
+
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static './custom/upload.css' %}">
+{% endblock link %}
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+
+
+
+{% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+{% block webcontent %}
+<div class="container" style="display: flex;flex-direction: column;">
+    <div class="up_main_d mt-5">
+        <h3>Upload</h1>
+            <form id="upload-form" method="POST" action=" " class="up1_fs1" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="name" id="user" value="{{user}}" style="display: none;" name="user" />
+                <input type="text" id="title" list="jii" class="form-control mt-2" placeholder="title" name="title" />
+                <datalist id="jii">
+                    {% for obj in objs %}
+                        <option value="{{obj}}">{{obj}}</option>
+                    {% endfor %}
+                </datalist>
+                <input type="file" id="file" class="form-control mt-2" placeholder="put file here" name="file" />
+                <input type="" id="decs" class="form-control mt-2" style="padding:10%" placeholder=" description" name="decs" />
+                <!-- choices = [("app","app"),("pdf","pdf"),("video","video"),("doc","doc"),("compress_file","comp_file")] -->
+                <select name="data_type" id="datatype" class="form-control mt-2">
+                    <option value="app">App</option>
+                    <option value="pdf">Pdf</option>
+                    <option value="video">Video</option>
+                    <option value="doc">Doc</option>
+                    <option value="compress_file">compress_file</option>
+                    <option value="image">image</option>
+                    <option value="music">music</option>
+                </select>
+                <input id="submit-btn" type="button" class="btn btn-success mt-5" value="Upload" />
+            </form>
+            
+    </div>
+    <div class="progress-bar_cancal-btn mt-3">
+        <div id="progress_box" class="not_vis">
+            <!-- <button>text</button> -->
+        </div>
+        <div id="cancal_box" class="not_vis">
+            <button id="cancle-btn" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</div>
+{% endblock webcontent %}
+{% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
+{% block script %}
+<script src="{% static './custom/upload.js' %}"></script>
+{% endblock script %}
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}

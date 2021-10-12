@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+{% block title %}
+{{message}}
+{% endblock title %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+
+
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static './custom/success.css' %}">
+{% endblock link %}
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+
+
+
+{% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+{% block webcontent %}
+
+
+<div class="text_message">
+<h3>{{message}}</h3>
+<br>
+<div>
+<a class="btn btn-success mt-5" href="{% url 'home' %}">Home</a>
+
+{% if admin %}
+    <a class="btn btn-success mt-5" href="{% url 'admin:index' %}">Admin</a>
+{% endif %}
+
+{% if Upload %}
+    <a class="btn btn-success mt-5" href="{% url 'upload' %}">Upload</a>
+{% endif %}
+
+{% if Login %}
+    <a class="btn btn-success mt-5" href="{% url 'login' %}">Login</a>
+{% endif %}
+
+{% if Logout %}
+    <a class="btn btn-success mt-5" href="{% url 'logout' %}">Logout</a>
+{% endif %}
+
+{% if Signup %}
+    <a class="btn btn-success mt-5" href="{% url 'signup' %}">Sign up</a>
+{% endif %}
+
+{% if Appstore %}
+    <a class="btn btn-success mt-5" href="{% url 'appstore' %}">Appstore</a>
+{% endif %}
+
+</div>
+</div>
+{% endblock webcontent %}
+{% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
+{% block script %}{% endblock script %}
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}

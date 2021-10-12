@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+{% block title %}
+{{data.title}}
+{% endblock title %}
+
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+{% block link %}
+<style>
+.flex_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.size{
+    height: 30%;
+    width: 40%;
+}
+</style>
+{% endblock link %}
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+
+
+
+{% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+{% block webcontent %}
+<div class="container">
+    <div style="display:flex;flex-direction: column;margin:5%">
+        <h3>{{data.title}}</h3>
+        <h5>{{data.decs}}</h5>
+        <div class="mt-4 ">
+            {% if data.type_data == "video" %}
+            <video class="size" controls>
+                <source src="{{data.data.url}}">
+            </video>
+            {% elif data.type_data == "doc"%}   
+                <embed src="{{data.data.url}}" type="application/pdf" height="100%" width="100%"></embed>
+            
+            {% elif data.type_data == "image"%}
+                <img class="size" src="{{data.data.url}}"></img>
+                
+            {% elif data.type_data == "music"%}
+                <audio controls>
+                    <source src="{{data.data.url}}" type="audio/ogg">
+                </audio>
+            
+            {% elif data.type_data == "pdf"%}
+                <embed class="size" src="{{data.data.url}}" type="application/pdf" height="100%" width="100%"></embed>
+                
+            {% else %}
+            {% endif %}
+        </div>
+
+
+
+        <br>
+        <div class="flex_btn">
+            <a class="btn btn-success mt-5" style="
+            margin-right: 30px;
+            width: 50%;
+            padding: 10px;
+        " href="{{data.data.url}}">Download({{data.type_data}})</a>
+            {% if request.user.is_superuser %}
+            <a class="btn btn-success mt-5" style="
+            margin-right: 30px;
+            width: 50%;
+        " href="{% url 'admin:index' %}">Edit</a>
+            {% endif %}
+            {% if data.type_data == "pdf" %}
+            {% comment %} <form method="POST" action="{% url 'audio' %}" style="width:50%;">
+                <input value="{{data.id}}" type="hidden" name="obj_id">
+                <input type="submit" class="btn btn-success mt-5" style="padding: 10px;
+                width: 100%;
+                " value="Audio" >
+            </form> {% endcomment %}
+            {% endif %}
+        </div>
+        <br>
+        <h6>Uploaded by:-{{data.user}}</h6>
+    </div>
+</div>
+{% endblock webcontent %}
+{% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
+{% block script %}
+{% endblock script %}
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}

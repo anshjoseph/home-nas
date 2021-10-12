@@ -1,0 +1,1 @@
+D:\potable_python\HOME_NASv0.1\nginx-1.20.1\nginx.exe -s stop

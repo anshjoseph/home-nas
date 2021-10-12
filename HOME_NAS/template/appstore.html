@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+{% block title %}
+Appstore
+{% endblock title %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+
+
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static './custom/appstore.css' %}">
+{% endblock link %}
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+
+
+
+{% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+{% block webcontent %}
+<div class="container mt-5">
+    <div>
+        <div class="h1_search">
+            <form action=" " style="display: flex; width: 90%;" method="POST">
+                {% csrf_token %}
+                <input type="search" list="ss" name="search" style="display:auto;padding: 7px;" class="form-control"
+                    placeholder="search">
+                <datalist id="ss">
+                    {% for item in items %}
+                        <option value="{{item}}"></option>
+                    {% endfor %}
+                </datalist>
+
+                <input type="submit" class="btn btn-success" style="margin-left: 2%;" value="search">
+            </form>
+            <a class="btn btn-success" href="{% url 'upload' %}">Upload</a>
+        </div>
+        <div class="mt-3" style="display:flex;justify-content:center;">
+            {% if objs %}
+            <div class="card_grid">
+            {% for obj in objs %}
+            <div class="card cd2" style="width: 18rem;cursor: pointer;" onclick="getdata({{obj.id}})">
+                <div class="card-body">
+                    <h5 class="card-title">{{obj.title}}({{obj.type_data}})</h1>
+                        <p class="card-text">{{obj.decs|slice:":20"}}...</p>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+            <form action="{% url 'showdata' %}" method="POST" id="form_id">
+            {% csrf_token %}
+            <input type="text" style="display:none" name="id" id="input_id">
+            </form>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock webcontent %}
+{% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
+{% block script %}
+<script>
+form = document.getElementById("form_id")
+function getdata(arg){
+    inp = document.getElementById("input_id");
+    inp.setAttribute("value",arg)
+    form.submit();
+}
+</script>
+{% endblock script %}
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}

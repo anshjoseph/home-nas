@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+{% block title %}
+{{message}}
+{% endblock title %}
+{% comment %} ---------------------------title------------------------------ {% endcomment %}
+
+
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static './custom/error.css' %}">
+{% endblock link %}
+{% comment %} ---------------------------Stylesheet------------------------------ {% endcomment %}
+
+
+
+
+{% comment %} ------------------------------webcontent---------------------------- {% endcomment %}
+{% block webcontent %}
+
+
+<div class="text_message">
+<h3>{{message}}</h3>
+</div>
+{% endblock webcontent %}
+{% comment %} -------------------------------webcontent-------------------------- {% endcomment %}
+
+
+
+
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
+{% block script %}{% endblock script %}
+{% comment %} ---------------------------java script----------------------------- {% endcomment %}
