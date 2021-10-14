@@ -64,5 +64,5 @@ elif maincom.lower() == "-help" or maincom.lower() == "-h":
         HOME_NAS.exe -install <username> <password>
 
     """
-    print()
+    print(hdata)
     
