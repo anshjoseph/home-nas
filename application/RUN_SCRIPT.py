@@ -1,4 +1,3 @@
-
 from pathlib import Path
 BASE_DIR = str(Path(__file__).resolve().parent.parent)
 with open(f"{BASE_DIR}\\BASE_DIR.txt",'r') as file:
