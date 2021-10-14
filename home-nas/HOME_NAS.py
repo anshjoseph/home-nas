@@ -10,9 +10,7 @@ if maincom.lower() == "-run" or maincom.lower() == "-r":
 elif maincom.lower() == "-stop" or maincom.lower() == "-s":
     os.system(f"{BASE_DIR}\\STOP.bat")
 elif  maincom.lower() == "-install" or maincom.lower() == "-i":
-    os.system(f"setx PATH \"{Path(__file__).resolve()};%PATH%\"")
-    
-    
+    # os.system(f"setx PATH \"{Path(__file__).resolve()};%PATH%\"")
 
     # run install
     com1 = f"cd .. && {BASE_DIR}\\install.exe"
