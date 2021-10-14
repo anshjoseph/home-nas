@@ -4,18 +4,18 @@
   
   
   # RUN SERVER
-    run home-nas.exe and run "HOME_NAS.exe -r or HOME_NAS.exe -run"
+    open START folder and open home-nas.exe and run "HOME_NAS.exe -r or HOME_NAS.exe -run"
   # STOP SERVER
-     run home-nas.exe and run "HOME_NAS.exe -s or HOME_NAS.exe -stop"
+     open START folder and open home-nas.exe and run "HOME_NAS.exe -s or HOME_NAS.exe -stop"
   # FIRST TIME RUN
-     run home-nas.exe and run HOME_NAS.exe -install <admin username> <admin password>(this command init the project and rewrite the config and make admin id for website)
+     open START folder and open home-nas.exe and run HOME_NAS.exe -install <admin username> <admin password>(this command init the project and rewrite the config and make admin id for website)
     {you also can use HOME_NAS>.exe -i <admin username> <admin password>}
   # HELP
-     run home-nas.exe and run HOME_NAS.exe -h or HOME_NAS.exe -help
+     open START folder and open home-nas.exe and run HOME_NAS.exe -h or HOME_NAS.exe -help
   # OPEN ADMIN PAGE
-    run home-nas.exe and run HOME_NAS.exe -a or HOME_NAS.exe -admin
+    open START folder and open home-nas.exe and run HOME_NAS.exe -a or HOME_NAS.exe -admin
    NOTE this thing only work on edge and chrome
   # OPEN WEBSITE
-    run home-nas.exe and run HOME_NAS.exe -owp or HOME_NAS.exe -openwebpage
+    open START folder and open home-nas.exe and run HOME_NAS.exe -owp or HOME_NAS.exe -openwebpage
    NOTE this thing only work on edge and chrome
  
