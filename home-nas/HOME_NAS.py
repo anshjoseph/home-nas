@@ -7,7 +7,7 @@ maincom = command[1]
  
 if maincom.lower() == "-run" or maincom.lower() == "-r":
     os.system(f"{BASE_DIR}\\RUN.bat")
-elif maincom.lower() == "-stop" or maincom.lower() == "-stop":
+elif maincom.lower() == "-stop" or maincom.lower() == "-s":
     os.system(f"{BASE_DIR}\\STOP.bat")
 elif  maincom.lower() == "-install" or maincom.lower() == "-i":
     os.system(f"setx PATH \"{Path(__file__).resolve()};%PATH%\"")
@@ -35,4 +35,36 @@ elif  maincom.lower() == "-install" or maincom.lower() == "-i":
     com2 = f"cd .. && {python} make_admin.py"
     # print(com2)
     os.system(com2)
+elif maincom.lower() == "-help" or maincom.lower() == "-h":
+    hdata = """
+    This application is made by 😎R ansh joseph😎
+    .In this project i use winpython and niginx and 
+    i am not the dev. of winpython and niginx.
+
+    NOTE: use same terminal for all this process
+
+    TO RUN SERVER
+        HOME_NAS.exe -r
+             or
+        HOME_NAS.exe -run
+
+    TO STOP SERVER
+        :- the prev process {ctrl+c}
+        HOME_NAS.exe -s
+             or
+        HOME_NAS.exe -stop
+
+    TO INSTALL SERVER
+        :- username and password given here is your admin password and id
+           for the wibsite you can access admin panel by http://localhost/admin
+           or your system ip http://<system ip>/admin
+           |
+           after install if want to start server you have run server command
+
+        HOME_NAS.exe -i <username> <password>
+             or
+        HOME_NAS.exe -install <username> <password>
+
+    """
+    print()
     
