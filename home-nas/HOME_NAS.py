@@ -63,6 +63,29 @@ elif maincom.lower() == "-help" or maincom.lower() == "-h":
              or
         HOME_NAS.exe -install <username> <password>
 
+    TO OPEN ADMIN PAGE
+        :- this command work on chrome or edge
+
+        HOME_NAS.exe -a
+             or
+        HOME_NAS.exe -admin
+    
+    To OPEN WEBPAGE
+        :- this command work on chrome or edge
+        
+        HOME_NAS.exe -owp
+             or
+        HOME_NAS.exe -openwebpage
     """
     print(hdata)
-    
+elif maincom.lower() == "-admin" or maincom.lower() == "-a":
+    try:
+        os.system("start chrome http://localhost/admin")
+    except:
+        os.system("start microsoft-edge:http://localhost/admin")
+
+elif maincom.lower() == "-openwebpage" or maincom.lower() == "-owp":
+    try:
+        os.system("start chrome http://localhost/")
+    except:
+        os.system("start microsoft-edge:http://localhost/") 
