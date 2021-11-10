@@ -5,8 +5,10 @@
   
   # RUN SERVER
     open START folder and open home-nas.exe and run "HOME_NAS.exe -r or HOME_NAS.exe -run"
+    and open nginx-1.20.1 folder open cmd and write commmand start nginx.exe
   # STOP SERVER
      open START folder and open home-nas.exe and run "HOME_NAS.exe -s or HOME_NAS.exe -stop"
+     and open nginx-1.20.1 folder open cmd and write commmand nginx.exe -s stop
   # FIRST TIME RUN
      open START folder and open home-nas.exe and run HOME_NAS.exe -install <admin username> <admin password>(this command init the project and rewrite the config and make admin id for website)
     {you also can use HOME_NAS>.exe -i <admin username> <admin password>}
